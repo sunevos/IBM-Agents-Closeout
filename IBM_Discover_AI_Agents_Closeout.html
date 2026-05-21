@@ -43,7 +43,7 @@
   }
   .nav-logo { display: flex; align-items: center; gap: 16px; }
   .nav-logo-img { height: 26px; width: auto; display: block; }
-  .nav-logo-img.ibm { height: 20px; }
+  .nav-logo-img.ibm { height: 32px; }
 
   /* PHONE MOCKUP */
   .mockup-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; margin-top: 56px; align-items: flex-start; }
@@ -68,7 +68,7 @@
   .section-lead { font-size: 20px; font-weight: 400; line-height: 1.5; color: var(--text-sec); max-width: 640px; }
 
   /* HERO */
-  .hero { min-height: 100vh; display: flex; flex-direction: column; justify-content: flex-end; padding: 0 48px 80px; position: relative; overflow: hidden; }
+  .hero { min-height: 100vh; display: flex; flex-direction: column; justify-content: flex-end; padding: 0; position: relative; overflow: hidden; }
   .hero-bg-orb { position: absolute; top: -200px; right: -200px; width: 800px; height: 800px; background: radial-gradient(circle, rgba(255,134,38,0.12) 0%, transparent 65%); pointer-events: none; }
   .hero-bg-orb2 { position: absolute; bottom: -100px; left: -100px; width: 600px; height: 600px; background: radial-gradient(circle, rgba(87,150,244,0.07) 0%, transparent 65%); pointer-events: none; }
   .hero-tag { font-size: 12px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); margin-bottom: 32px; display: block; }
@@ -80,6 +80,7 @@
   .hero-meta-value { font-size: 15px; font-weight: 600; color: var(--text-sec); }
   .hero-scroll-hint { position: absolute; bottom: 32px; right: 48px; font-size: 11px; color: var(--text-ter); letter-spacing: 0.06em; text-transform: uppercase; display: flex; align-items: center; gap: 8px; }
   .hero-scroll-hint::before { content: ''; display: block; width: 1px; height: 32px; background: var(--border); }
+  .hero-inner { max-width: 1200px; margin: 0 auto; width: 100%; padding: 0 48px 80px; }
 
   /* KPI CARDS */
   .kpi-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2px; background: var(--border); border-radius: var(--card-r-lg); overflow: hidden; margin-top: 64px; }
@@ -103,6 +104,22 @@
   .module-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--accent); flex-shrink: 0; margin-top: 6px; }
   .module-hl { color: var(--accent); font-weight: 600; }
   .badge-pill { display: inline-flex; align-items: center; gap: 6px; background: rgba(255,134,38,0.1); border: 1px solid rgba(255,134,38,0.3); border-radius: 999px; padding: 5px 12px; font-size: 12px; font-weight: 600; color: var(--accent); margin-top: 16px; }
+
+
+  /* JOURNEY DIAGRAM */
+  .journey-wrap { display: flex; align-items: flex-start; gap: 0; margin-top: 0; overflow-x: auto; padding-bottom: 8px; }
+  .journey-step { display: flex; flex-direction: column; align-items: center; text-align: center; flex: 1; min-width: 140px; position: relative; }
+  .journey-icon { width: 56px; height: 56px; border-radius: 50%; background: var(--bg-shade); border: 2px solid var(--accent); display: flex; align-items: center; justify-content: center; margin-bottom: 12px; flex-shrink: 0; position: relative; z-index: 1; }
+  .journey-icon svg { width: 24px; height: 24px; }
+  .journey-step-num { font-size: 10px; font-weight: 700; color: var(--accent); letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 6px; }
+  .journey-step-label { font-size: 13px; font-weight: 600; color: var(--white); line-height: 1.4; margin-bottom: 4px; padding: 0 8px; }
+  .journey-step-sub { font-size: 11px; color: var(--text-ter); line-height: 1.4; padding: 0 8px; }
+  .journey-connector { flex: 0 0 40px; display: flex; align-items: center; justify-content: center; margin-top: 28px; }
+  .journey-connector::after { content: ''; display: block; width: 100%; height: 2px; background: linear-gradient(90deg, var(--accent), rgba(255,134,38,0.3)); }
+  .journey-step.ibm .journey-icon { border-color: var(--blue); background: rgba(87,150,244,0.08); }
+  .journey-step.ibm .journey-step-num { color: var(--blue); }
+  .journey-step.badge .journey-icon { border-color: var(--green); background: rgba(21,201,112,0.08); }
+  .journey-step.badge .journey-step-num { color: var(--green); }
 
   /* SURVEY */
   .survey-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 48px; }
@@ -137,7 +154,7 @@
   .funnel-arrow { font-size: 14px; color: var(--text-ter); margin: 4px 0 4px 16px; display: flex; align-items: center; gap: 6px; }
 
   /* COUNTRIES */
-  .country-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-top: 48px; }
+  .country-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-top: 48px; } /* 10 items */
   .country-card { background: var(--bg-shade); border-radius: var(--card-r); padding: 18px 24px; display: flex; justify-content: space-between; align-items: center; transition: background 0.2s; }
   .country-card:hover { background: #22212A; }
   .country-card.top { border-left: 2px solid var(--accent); }
@@ -201,7 +218,7 @@
   .callout.blue { background: rgba(87,150,244,0.07); border-left-color: var(--blue); }
 
   /* OUTRO */
-  .outro { background: var(--navy); padding: 72px 48px; text-align: center; position: relative; overflow: hidden; }
+  .outro { background: #000000; padding: 72px 48px; text-align: center; position: relative; overflow: hidden; }
   .outro-bg { position: absolute; inset: 0; background: radial-gradient(ellipse at center, rgba(87,150,244,0.1) 0%, transparent 65%); pointer-events: none; }
   .outro-title { font-size: clamp(36px, 5vw, 64px); font-weight: 600; line-height: 1.05; letter-spacing: -0.02em; margin-bottom: 24px; position: relative; }
   .outro-sub { font-size: 18px; color: var(--text-sec); max-width: 520px; margin: 0 auto 48px; line-height: 1.6; position: relative; }
@@ -220,7 +237,7 @@
     .nav { padding: 14px 24px; }
     .nav-links { display: none; }
     .section, .outro, .footer { padding-left: 24px; padding-right: 24px; }
-    .hero { padding-left: 24px; padding-right: 24px; }
+    .hero-inner { padding-left: 24px; padding-right: 24px; padding-bottom: 80px; }
     .kpi-grid, .structure-grid, .forward-grid { grid-template-columns: 1fr 1fr; }
     .bench-grid { grid-template-columns: 1fr 1fr; }
     .spotlight-grid, .country-grid, .survey-grid { grid-template-columns: 1fr 1fr; }
@@ -259,6 +276,7 @@
 <section class="hero" id="top">
   <div class="hero-bg-orb"></div>
   <div class="hero-bg-orb2"></div>
+  <div class="hero-inner">
   <span class="hero-tag">// Program Close-out Report</span>
   <h1 class="hero-title">Discover<br><em>AI Agents.</em></h1>
   <p class="hero-sub">A program close-out report for the IBM SkillsBuild x Goodwall partnership. This pilot program served as an accessible entry point to Agentic AI for global Gen Z learners, driving them toward deeper, credentialed learning on IBM SkillsBuild.</p>
@@ -275,6 +293,7 @@
       <div class="hero-meta-label">Platform</div>
       <div class="hero-meta-value">Goodwall x IBM SkillsBuild</div>
     </div>
+  </div>
   </div>
   <span class="hero-scroll-hint">Scroll to explore</span>
 </section>
@@ -376,6 +395,67 @@
 
 
 </section>
+<!-- USER JOURNEY DIAGRAM -->
+<div style="max-width:1200px;margin:0 auto;padding:0 48px;margin-top:48px;">
+    <span class="overline" style="margin-bottom:20px;">// User journey</span>
+    <div class="journey-wrap">
+
+      <div class="journey-step">
+        <div class="journey-step-num">Step 01</div>
+        <div class="journey-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#FF8626" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        </div>
+        <div class="journey-step-label">Access Goodwall</div>
+        <div class="journey-step-sub">Join the platform via app or web</div>
+      </div>
+
+      <div class="journey-connector"></div>
+
+      <div class="journey-step">
+        <div class="journey-step-num">Step 02</div>
+        <div class="journey-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#FF8626" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+        </div>
+        <div class="journey-step-label">Complete Discover AI Agents</div>
+        <div class="journey-step-sub">4 videos, benchmarking survey &amp; quiz</div>
+      </div>
+
+      <div class="journey-connector"></div>
+
+      <div class="journey-step">
+        <div class="journey-step-num">Step 03</div>
+        <div class="journey-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#FF8626" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg>
+        </div>
+        <div class="journey-step-label">Complete #AIAgentFuture</div>
+        <div class="journey-step-sub">Submit a 30–60s original video challenge</div>
+      </div>
+
+      <div class="journey-connector"></div>
+
+      <div class="journey-step badge">
+        <div class="journey-step-num">Step 04</div>
+        <div class="journey-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#15C970" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/></svg>
+        </div>
+        <div class="journey-step-label">Earn Goodwall Badge</div>
+        <div class="journey-step-sub">Discover AI Agents Badge or AI Agent Future Badge</div>
+      </div>
+
+      <div class="journey-connector"></div>
+
+      <div class="journey-step ibm">
+        <div class="journey-step-num">Step 05</div>
+        <div class="journey-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#5796F4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+        </div>
+        <div class="journey-step-label">Access IBM SkillsBuild</div>
+        <div class="journey-step-sub">Deeper learning &amp; professional credentials</div>
+      </div>
+
+    </div>
+</div>
+
 <!-- PROGRAM OVERVIEW IMAGE -->
 <div style="max-width:1200px;margin:0 auto;padding:0 48px 0;">
   <img src="./program_overview_img.png" alt="Discover AI Agents program overview" style="width:100%;border-radius:16px;display:block;">
@@ -408,41 +488,39 @@
     <!-- Q1 -->
     <div class="survey-card">
       <div class="survey-card-title">Q1 — Have you heard of Agentic AI before today?</div>
-      <div class="survey-stat-big" style="color:var(--accent)">54.6%</div>
-      <div class="survey-stat-desc" style="margin-bottom:20px;">said yes.</div>
+      <div class="survey-stat-big" style="color:var(--accent)">45%</div>
+      <div class="survey-stat-desc" style="margin-bottom:20px;">of respondents had never heard of Agentic AI before, confirming the need for an accessible, entry-level program.</div>
       <div class="bar-row">
         <div class="bar-item">
-          <div class="bar-label-row"><span>Yes, I've heard of it</span><span class="bar-label-pct">54.6%</span></div>
-          <div class="bar-track"><div class="bar-fill" style="width:54.6%"></div></div>
+          <div class="bar-label-row"><span>No, this is new to me</span><span class="bar-label-pct">45.4%</span></div>
+          <div class="bar-track"><div class="bar-fill" style="width:45.4%"></div></div>
         </div>
         <div class="bar-item">
-          <div class="bar-label-row"><span>No, this is new to me</span><span class="bar-label-pct">45.4%</span></div>
-          <div class="bar-track"><div class="bar-fill muted" style="width:45.4%"></div></div>
+          <div class="bar-label-row"><span>Yes, I've heard of it</span><span class="bar-label-pct">54.6%</span></div>
+          <div class="bar-track"><div class="bar-fill muted" style="width:54.6%"></div></div>
         </div>
       </div>
-      <div class="highlight-stat"><strong>45% of respondents</strong> had never heard of Agentic AI before, confirming the need for an accessible, entry-level programme.</div>
     </div>
 
     <!-- Q2 -->
     <div class="survey-card">
       <div class="survey-card-title">Q2 — Have you ever used an AI Agent?</div>
-      <div class="survey-stat-big" style="color:var(--blue)">50.5%</div>
-      <div class="survey-stat-desc" style="margin-bottom:20px;">had used an AI Agent.</div>
+      <div class="survey-stat-big" style="color:var(--blue)">50%</div>
+      <div class="survey-stat-desc" style="margin-bottom:20px;">had never knowingly used an AI Agent, or weren't sure, highlighting a clear gap this program was built to close.</div>
       <div class="bar-row">
         <div class="bar-item">
-          <div class="bar-label-row"><span>Yes</span><span class="bar-label-pct">50.5%</span></div>
-          <div class="bar-track"><div class="bar-fill blue" style="width:50.5%"></div></div>
-        </div>
-        <div class="bar-item">
           <div class="bar-label-row"><span>No</span><span class="bar-label-pct">34.8%</span></div>
-          <div class="bar-track"><div class="bar-fill muted" style="width:34.8%"></div></div>
+          <div class="bar-track"><div class="bar-fill blue" style="width:34.8%"></div></div>
         </div>
         <div class="bar-item">
           <div class="bar-label-row"><span>Not sure</span><span class="bar-label-pct">14.7%</span></div>
-          <div class="bar-track"><div class="bar-fill muted2" style="width:14.7%"></div></div>
+          <div class="bar-track"><div class="bar-fill blue" style="width:14.7%;opacity:0.6;"></div></div>
+        </div>
+        <div class="bar-item">
+          <div class="bar-label-row"><span>Yes</span><span class="bar-label-pct">50.5%</span></div>
+          <div class="bar-track"><div class="bar-fill muted" style="width:50.5%"></div></div>
         </div>
       </div>
-      <div class="highlight-stat">Nearly <strong>50% had never knowingly used an AI Agent</strong>, or weren't sure, highlighting a clear gap this programme was built to close.</div>
     </div>
 
     <!-- Q3 -->
@@ -502,7 +580,7 @@
   </div>
 
   <div class="callout">
-    <strong>Key insight:</strong> The audience entered with strong GenAI fluency but limited exposure to Agentic AI specifically, making this programme a timely and strategic bridge from familiar chatbot usage to the next frontier.
+    <strong>Key insight:</strong> The audience entered with strong GenAI fluency but limited exposure to Agentic AI specifically, making this program a timely and strategic bridge from familiar chatbot usage to the next frontier.
   </div>
 </section>
 
@@ -530,7 +608,7 @@
           <span class="funnel-bar-label">Engaged</span>
         </div>
       </div>
-      <div class="funnel-meta"><div class="funnel-num" style="color:var(--yellow)">238,394</div><div class="funnel-sub">Interacted with program</div></div>
+      <div class="funnel-meta"><div class="funnel-num" style="color:var(--accent)">238,394</div><div class="funnel-sub">Interacted with program</div></div>
       <div class="funnel-conv">318% of target</div>
     </div>
     <div class="funnel-arrow">&#8595; <span style="font-size:12px;color:var(--green);font-weight:600;">12% conversion</span></div>
@@ -546,31 +624,31 @@
     <div class="funnel-arrow">&#8595; <span style="font-size:12px;color:var(--green);font-weight:600;">17% conversion</span></div>
     <div class="funnel-row">
       <div class="funnel-bar-wrap">
-        <div class="funnel-bar" style="background:rgba(21,201,112,0.2);width:45%">
+        <div class="funnel-bar" style="background:rgba(87,150,244,0.2);width:45%">
           <span class="funnel-bar-label">Credentialed / Qualified</span>
         </div>
       </div>
-      <div class="funnel-meta"><div class="funnel-num" style="color:var(--green)">4,845</div><div class="funnel-sub">Badges earned or challenge qualified</div></div>
+      <div class="funnel-meta"><div class="funnel-num" style="color:var(--blue)">4,845</div><div class="funnel-sub">Badges earned or challenge qualified</div></div>
       <div class="funnel-conv">242% of target</div>
     </div>
     <div class="funnel-arrow">&#8595; <span style="font-size:12px;color:var(--text-ter);font-weight:600;">31% clicked through to IBM SkillsBuild</span></div>
     <div class="funnel-row">
       <div class="funnel-bar-wrap">
-        <div class="funnel-bar" style="background:rgba(87,150,244,0.15);width:30%;min-width:220px;">
+        <div class="funnel-bar" style="background:rgba(21,201,112,0.15);width:30%;min-width:220px;">
           <span class="funnel-bar-label">IBM SkillsBuild Click-through</span>
         </div>
       </div>
-      <div class="funnel-meta"><div class="funnel-num" style="color:var(--blue)">8,889</div><div class="funnel-sub">Total (2,380 via tracked link)</div></div>
+      <div class="funnel-meta"><div class="funnel-num" style="color:var(--green)">8,889</div><div class="funnel-sub">Total (2,380 via tracked link)</div></div>
       <div class="funnel-conv"></div>
     </div>
     <div class="funnel-arrow">&#8595; <span style="font-size:12px;color:var(--text-ter);font-weight:600;">15% conversion</span></div>
     <div class="funnel-row">
       <div class="funnel-bar-wrap">
-        <div class="funnel-bar" style="background:rgba(87,150,244,0.1);width:20%;min-width:220px;">
+        <div class="funnel-bar" style="background:rgba(21,201,112,0.1);width:20%;min-width:220px;">
           <span class="funnel-bar-label">IBM SkillsBuild Registrations</span>
         </div>
       </div>
-      <div class="funnel-meta"><div class="funnel-num" style="color:var(--blue)">356</div><div class="funnel-sub">Registered on IBM SkillsBuild</div></div>
+      <div class="funnel-meta"><div class="funnel-num" style="color:var(--green)">356</div><div class="funnel-sub">Registered on IBM SkillsBuild</div></div>
       <div class="funnel-conv"></div>
     </div>
     <div class="funnel-arrow">&#8595; <span style="font-size:12px;color:var(--green);font-weight:600;">59% content engagement</span></div>
@@ -587,6 +665,30 @@
 
   <!-- GROWTH OVER TIME -->
   <div style="margin-top:72px;">
+
+  <!-- Benchmarks -->
+  <div style="margin-top:72px;">
+    <span class="overline">// Performance vs. benchmarks</span>
+    <h3 style="font-size:28px;font-weight:600;letter-spacing:-0.02em;margin-bottom:12px;">Setting new standards for AI programs.</h3>
+    <p style="font-size:16px;color:var(--text-sec);">Compared across funnel conversion rates, IBM SkillsBuild programming on Goodwall outperforms both similar programs and average AI program benchmarks in the metric that matters most: turning learners into credentialed graduates.</p>
+    <div class="bench-grid">
+      <div class="bench-cell header">Conversion Rate</div>
+      <div class="bench-cell header">IBM SkillsBuild</div>
+      <div class="bench-cell header">Similar Programs</div>
+      <div class="bench-cell header">Target Benchmark</div>
+      <div class="bench-cell header">Avg. AI Programs</div>
+      <div class="bench-cell label">Engaged to Trained</div>
+      <div class="bench-cell">11.6%</div><div class="bench-cell">15.7%</div><div class="bench-cell">24.8%</div><div class="bench-cell">28.9%</div>
+      <div class="bench-cell label">Trained to Credentialed <span class="bench-best-badge">Best</span></div>
+      <div class="bench-cell highlight">17.5%</div><div class="bench-cell">6.7%</div><div class="bench-cell">5.2%</div><div class="bench-cell">14.3%</div>
+      <div class="bench-cell label">Trained to Partner Platform <span class="bench-best-badge">Best</span></div>
+      <div class="bench-cell highlight">31%</div><div class="bench-cell">11.6%</div><div class="bench-cell">—</div><div class="bench-cell">—</div>
+    </div>
+    <div class="callout">
+      <strong>Standout finding:</strong> IBM SkillsBuild achieves a Trained to Credentialed rate of 17.5%, more than 2.6x the similar programs benchmark (6.7%) and 22% better than the average for AI programs. Nearly all qualified challenge participants completed the full Discover AI Agents course.
+    </div>
+  </div>
+
     <span class="overline">// Growth over time</span>
     <h3 style="font-size:28px;font-weight:600;letter-spacing:-0.02em;margin-bottom:12px;">18 weeks of consistent progress.</h3>
     <p style="font-size:16px;color:var(--text-sec);">Every bi-weekly check-in showed growth across all four KPIs, ahead of benchmark pacing at every milestone.</p>
@@ -642,72 +744,104 @@
   <div style="margin-top:72px;">
     <span class="overline">// Geographic reach</span>
     <h3 style="font-size:28px;font-weight:600;letter-spacing:-0.02em;margin-bottom:12px;">A truly global program.</h3>
-    <p style="font-size:16px;color:var(--text-sec);">Top 9 countries by youth trained, led by Nigeria and India, with strong representation across Sub-Saharan Africa, South Asia, Southeast Asia, and North America.</p>
+    <p style="font-size:16px;color:var(--text-sec);">Top 10 countries by youth trained, led by Nigeria and India, with strong representation across Sub-Saharan Africa, South Asia, Southeast Asia, North America, and the Philippines.</p>
     <div class="country-grid">
       <div class="country-card top">
         <div class="country-left"><img class="country-flag" src="https://flagcdn.com/24x18/ng.png" alt="Nigeria"><div><div class="country-name">Nigeria</div><div class="country-rank">#1</div></div></div>
-        <div class="country-num">7,269</div>
+        <div class="country-num">8,123</div>
       </div>
       <div class="country-card top">
         <div class="country-left"><img class="country-flag" src="https://flagcdn.com/24x18/in.png" alt="India"><div><div class="country-name">India</div><div class="country-rank">#2</div></div></div>
-        <div class="country-num">6,715</div>
+        <div class="country-num">7,093</div>
       </div>
       <div class="country-card">
         <div class="country-left"><img class="country-flag" src="https://flagcdn.com/24x18/ke.png" alt="Kenya"><div><div class="country-name">Kenya</div><div class="country-rank">#3</div></div></div>
-        <div class="country-num">2,578</div>
+        <div class="country-num">2,874</div>
       </div>
       <div class="country-card">
         <div class="country-left"><img class="country-flag" src="https://flagcdn.com/24x18/pk.png" alt="Pakistan"><div><div class="country-name">Pakistan</div><div class="country-rank">#4</div></div></div>
-        <div class="country-num">1,407</div>
+        <div class="country-num">1,499</div>
       </div>
       <div class="country-card">
         <div class="country-left"><img class="country-flag" src="https://flagcdn.com/24x18/np.png" alt="Nepal"><div><div class="country-name">Nepal</div><div class="country-rank">#5</div></div></div>
-        <div class="country-num">1,304</div>
+        <div class="country-num">1,481</div>
       </div>
       <div class="country-card">
         <div class="country-left"><img class="country-flag" src="https://flagcdn.com/24x18/us.png" alt="USA"><div><div class="country-name">United States</div><div class="country-rank">#6</div></div></div>
-        <div class="country-num">1,239</div>
+        <div class="country-num">1,400</div>
       </div>
       <div class="country-card">
         <div class="country-left"><img class="country-flag" src="https://flagcdn.com/24x18/za.png" alt="South Africa"><div><div class="country-name">South Africa</div><div class="country-rank">#7</div></div></div>
-        <div class="country-num">1,118</div>
+        <div class="country-num">1,208</div>
       </div>
       <div class="country-card">
-        <div class="country-left"><img class="country-flag" src="https://flagcdn.com/24x18/sg.png" alt="Singapore"><div><div class="country-name">Singapore</div><div class="country-rank">#8</div></div></div>
-        <div class="country-num">1,022</div>
+        <div class="country-left"><img class="country-flag" src="https://flagcdn.com/24x18/id.png" alt="Indonesia"><div><div class="country-name">Indonesia</div><div class="country-rank">#8</div></div></div>
+        <div class="country-num">1,169</div>
       </div>
       <div class="country-card">
         <div class="country-left"><img class="country-flag" src="https://flagcdn.com/24x18/gh.png" alt="Ghana"><div><div class="country-name">Ghana</div><div class="country-rank">#9</div></div></div>
-        <div class="country-num">984</div>
+        <div class="country-num">1,038</div>
+      </div>
+      <div class="country-card">
+        <div class="country-left"><img class="country-flag" src="https://flagcdn.com/24x18/ph.png" alt="Philippines"><div><div class="country-name">Philippines</div><div class="country-rank">#10</div></div></div>
+        <div class="country-num">525</div>
       </div>
     </div>
+
     <div class="chart-wrap">
-      <div class="chart-title">Youth trained — top 9 countries</div>
+      <div class="chart-title">Youth trained — top 10 countries</div>
       <div style="position:relative;height:280px;"><canvas id="countryChart"></canvas></div>
     </div>
   </div>
 
-  <!-- BENCHMARKS -->
+  <!-- US BUDGET PROJECTION -->
   <div style="margin-top:72px;">
-    <span class="overline">// Performance vs. benchmarks</span>
-    <h3 style="font-size:28px;font-weight:600;letter-spacing:-0.02em;margin-bottom:12px;">Setting new standards for AI programs.</h3>
-    <p style="font-size:16px;color:var(--text-sec);">Compared across funnel conversion rates, IBM SkillsBuild programming on Goodwall outperforms both similar programs and average AI program benchmarks in the metric that matters most: turning learners into credentialed graduates.</p>
-    <div class="bench-grid">
-      <div class="bench-cell header">Conversion Rate</div>
-      <div class="bench-cell header">IBM SkillsBuild</div>
-      <div class="bench-cell header">Similar Programs</div>
-      <div class="bench-cell header">Target Benchmark</div>
-      <div class="bench-cell header">Avg. AI Programs</div>
-      <div class="bench-cell label">Engaged to Trained</div>
-      <div class="bench-cell">11.6%</div><div class="bench-cell">15.7%</div><div class="bench-cell">24.8%</div><div class="bench-cell">28.9%</div>
-      <div class="bench-cell label">Trained to Credentialed <span class="bench-best-badge">Best</span></div>
-      <div class="bench-cell highlight">17.5%</div><div class="bench-cell">6.7%</div><div class="bench-cell">5.2%</div><div class="bench-cell">14.3%</div>
-      <div class="bench-cell label">Trained to Partner Platform <span class="bench-best-badge">Best</span></div>
-      <div class="bench-cell highlight">31%</div><div class="bench-cell">11.6%</div><div class="bench-cell">—</div><div class="bench-cell">—</div>
+    <span class="overline">// US Potential</span>
+    <h3 style="font-size:28px;font-weight:600;letter-spacing:-0.02em;margin-bottom:12px;">Projection of US potential for future programs.</h3>
+    <p style="font-size:16px;color:var(--text-sec);max-width:720px;line-height:1.7;">This program had a global focus, but what if we focused the entire pilot budget on the US? Based on conversion rates observed in this program, a dedicated US budget could achieve approximately <strong style="color:var(--white);">9,800 trained US learners</strong>, but would require a reach of roughly <strong style="color:var(--white);">2.5 million</strong> to overcome the higher top-of-funnel cost in the US market. A $12,000 budget directed entirely at the US would have achieved this goal.</p>
+    <div style="margin-top:32px;">
+      <div style="font-size:14px;font-weight:600;color:var(--text-sec);margin-bottom:16px;">Budget allocation scenarios — $12,000 total</div>
+      <div style="background:var(--bg-shade);border-radius:var(--card-r);overflow:hidden;">
+        <div style="display:grid;grid-template-columns:1.8fr 1fr 1fr 1fr;background:var(--bg-light);">
+          <div style="padding:14px 20px;font-size:11px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--text-ter);">Scenario</div>
+          <div style="padding:14px 20px;font-size:11px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--text-ter);">US reach</div>
+          <div style="padding:14px 20px;font-size:11px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--text-ter);">US trained</div>
+          <div style="padding:14px 20px;font-size:11px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--text-ter);">Total trained</div>
+        </div>
+        <div style="display:grid;grid-template-columns:1.8fr 1fr 1fr 1fr;border-top:1px solid var(--border);">
+          <div style="padding:16px 20px;font-size:14px;font-weight:600;color:var(--text-sec);">Actual (global split)</div>
+          <div style="padding:16px 20px;font-size:14px;color:var(--text-sec);">359,477</div>
+          <div style="padding:16px 20px;font-size:14px;color:var(--text-sec);">1,400</div>
+          <div style="padding:16px 20px;font-size:14px;color:var(--text-sec);">22,648</div>
+        </div>
+        <div style="display:grid;grid-template-columns:1.8fr 1fr 1fr 1fr;border-top:1px solid var(--border);background:rgba(255,255,255,0.02);">
+          <div style="padding:16px 20px;font-size:14px;font-weight:600;color:var(--white);">US + India + Indonesia equal split</div>
+          <div style="padding:16px 20px;font-size:14px;color:var(--white);">838,141</div>
+          <div style="padding:16px 20px;font-size:14px;color:var(--yellow);font-weight:600;">3,263</div>
+          <div style="padding:16px 20px;font-size:14px;color:var(--white);">20,133</div>
+        </div>
+        <div style="display:grid;grid-template-columns:1.8fr 1fr 1fr 1fr;border-top:1px solid var(--border);">
+          <div style="padding:16px 20px;">
+            <div style="font-size:14px;font-weight:600;color:var(--white);">US + India + Indonesia optimised</div>
+            <div style="font-size:11px;color:var(--text-ter);margin-top:3px;">India 26% / Indonesia 58% / US 16%</div>
+          </div>
+          <div style="padding:16px 20px;font-size:14px;color:var(--white);">407,178</div>
+          <div style="padding:16px 20px;font-size:14px;color:var(--yellow);font-weight:600;">1,586</div>
+          <div style="padding:16px 20px;font-size:14px;color:var(--green);font-weight:700;">25,856 ✓</div>
+        </div>
+        <div style="display:grid;grid-template-columns:1.8fr 1fr 1fr 1fr;border-top:1px solid var(--border);background:rgba(255,134,38,0.05);">
+          <div style="padding:16px 20px;">
+            <div style="font-size:14px;font-weight:600;color:var(--accent);">US only (100% budget)</div>
+            <div style="font-size:11px;color:var(--text-ter);margin-top:3px;">IBM's actual priority</div>
+          </div>
+          <div style="padding:16px 20px;font-size:14px;color:var(--accent);font-weight:600;">2,513,000</div>
+          <div style="padding:16px 20px;font-size:14px;color:var(--accent);font-weight:700;">9,786</div>
+          <div style="padding:16px 20px;font-size:14px;color:var(--accent);font-weight:600;">9,786</div>
+        </div>
+      </div>
     </div>
-    <div class="callout">
-      <strong>Standout finding:</strong> IBM SkillsBuild achieves a Trained to Credentialed rate of 17.5%, more than 2.6x the similar programs benchmark (6.7%) and 22% better than the average for AI programs. Nearly all qualified challenge participants completed the full Discover AI Agents course.
-    </div>
+  </div>
+
   </div>
 </section>
 
@@ -718,12 +852,11 @@
   <p class="section-lead">From Nigeria to the Philippines, India to Rwanda — top entries that demonstrate real comprehension, creativity, and passion for Agentic AI.</p>
 
   <div class="spotlight-grid">
-
     <div class="spotlight-card">
       <a href="https://www.goodwall.io/posts/generative-ai-vs-agentic-ai-b435169b" target="_blank">
         <div class="spotlight-thumb">
-          <div class="spotlight-thumb-bg" style="background:linear-gradient(135deg,#1a0e05 0%,#2d1a0a 40%,#FF8626 100%);"></div>
-          <div style="position:absolute;inset:0;background:url('data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22100%25%22 height=%22100%25%22><text x=%2250%25%22 y=%2235%25%22 font-family=%22sans-serif%22 font-size=%2222%22 font-weight=%22700%22 fill=%22rgba(255,255,255,0.06)%22 text-anchor=%22middle%22>%23AIAgentFuture</text></svg>') no-repeat center;"></div>
+          <img src="./spotlight_keziah.png" alt="Keziah" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;">
+          <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,0.55) 0%,transparent 50%);"></div>
           <div class="spotlight-thumb-text">
             <div class="spotlight-thumb-tag">#AIAgentFuture</div>
             <div class="spotlight-thumb-title">Generative AI vs. Agentic AI</div>
@@ -737,11 +870,11 @@
         <a class="spotlight-link" href="https://www.goodwall.io/posts/generative-ai-vs-agentic-ai-b435169b" target="_blank">View entry</a>
       </div>
     </div>
-
     <div class="spotlight-card">
       <a href="https://www.goodwall.io/posts/ai-is-changing-how-we-251cfa48" target="_blank">
         <div class="spotlight-thumb">
-          <div class="spotlight-thumb-bg" style="background:linear-gradient(135deg,#071a0e 0%,#0d2d18 40%,#15C970 100%);"></div>
+          <img src="./spotlight_uche.png" alt="Uche" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;">
+          <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,0.55) 0%,transparent 50%);"></div>
           <div class="spotlight-thumb-text">
             <div class="spotlight-thumb-tag">#AIAgentFuture</div>
             <div class="spotlight-thumb-title">AI is changing how we work and learn</div>
@@ -755,11 +888,11 @@
         <a class="spotlight-link" href="https://www.goodwall.io/posts/ai-is-changing-how-we-251cfa48" target="_blank">View entry</a>
       </div>
     </div>
-
     <div class="spotlight-card">
       <a href="https://www.goodwall.io/posts/from-493-gw-potential-to-fa1df825" target="_blank">
         <div class="spotlight-thumb">
-          <div class="spotlight-thumb-bg" style="background:linear-gradient(135deg,#060f1a 0%,#0d1e30 40%,#5796F4 100%);"></div>
+          <img src="./spotlight_nur.png" alt="Nur Haedin" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;">
+          <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,0.55) 0%,transparent 50%);"></div>
           <div class="spotlight-thumb-text">
             <div class="spotlight-thumb-tag">#AIAgentFuture</div>
             <div class="spotlight-thumb-title">AI Agents in everyday life</div>
@@ -773,11 +906,11 @@
         <a class="spotlight-link" href="https://www.goodwall.io/posts/from-493-gw-potential-to-fa1df825" target="_blank">View entry</a>
       </div>
     </div>
-
     <div class="spotlight-card">
       <a href="https://www.goodwall.io/posts/aiagentfuture-26c01cd4" target="_blank">
         <div class="spotlight-thumb">
-          <div class="spotlight-thumb-bg" style="background:linear-gradient(135deg,#1a1605 0%,#2d2508 40%,#F4DD2A 100%);"></div>
+          <img src="./spotlight_radha.png" alt="Radha" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;">
+          <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,0.55) 0%,transparent 50%);"></div>
           <div class="spotlight-thumb-text">
             <div class="spotlight-thumb-tag">#AIAgentFuture</div>
             <div class="spotlight-thumb-title">How I would use AI Agents</div>
@@ -791,11 +924,11 @@
         <a class="spotlight-link" href="https://www.goodwall.io/posts/aiagentfuture-26c01cd4" target="_blank">View entry</a>
       </div>
     </div>
-
     <div class="spotlight-card">
       <a href="https://www.goodwall.io/posts/aiagentfuture-we-all-use-generative-1e3842e2" target="_blank">
         <div class="spotlight-thumb">
-          <div class="spotlight-thumb-bg" style="background:linear-gradient(135deg,#1a0d07 0%,#2d1a0e 40%,#FF8626 100%);"></div>
+          <img src="./spotlight_goodnews.png" alt="Goodnews" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;">
+          <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,0.55) 0%,transparent 50%);"></div>
           <div class="spotlight-thumb-text">
             <div class="spotlight-thumb-tag">#AIAgentFuture</div>
             <div class="spotlight-thumb-title">We all use generative AI — what's next?</div>
@@ -809,11 +942,11 @@
         <a class="spotlight-link" href="https://www.goodwall.io/posts/aiagentfuture-we-all-use-generative-1e3842e2" target="_blank">View entry</a>
       </div>
     </div>
-
     <div class="spotlight-card">
       <a href="https://www.goodwall.io/posts/ai-is-evolving-from-creating-d5260917" target="_blank">
         <div class="spotlight-thumb">
-          <div class="spotlight-thumb-bg" style="background:linear-gradient(135deg,#060f1a 0%,#0a1a2a 40%,#5796F4 100%);"></div>
+          <img src="./spotlight_ingabire.png" alt="Ingabire" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;">
+          <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,0.55) 0%,transparent 50%);"></div>
           <div class="spotlight-thumb-text">
             <div class="spotlight-thumb-tag">#AIAgentFuture</div>
             <div class="spotlight-thumb-title">AI is evolving — from creating to acting</div>
@@ -827,7 +960,6 @@
         <a class="spotlight-link" href="https://www.goodwall.io/posts/ai-is-evolving-from-creating-d5260917" target="_blank">View entry</a>
       </div>
     </div>
-
   </div>
 
   <div class="callout blue">
@@ -849,12 +981,12 @@
     <div class="forward-card">
       <div class="forward-idx">Idea 02 — IBM and Business Branding</div>
       <div class="forward-title">Help youth build their professional identity.</div>
-      <div class="forward-body">IBM SkillsBuild launches a professional branding programme, helping youth understand how to build a personal brand and create an online presence that opens doors to real opportunities and career connections.</div>
+      <div class="forward-body">IBM SkillsBuild launches a professional branding program, helping youth understand how to build a personal brand and create an online presence that opens doors to real opportunities and career connections.</div>
     </div>
     <div class="forward-card">
       <div class="forward-idx">Idea 03 — IBM Industry Highlights</div>
       <div class="forward-title">IBM becomes Goodwall's most versatile partner.</div>
-      <div class="forward-body">IBM SkillsBuild runs programmes across all Goodwall themes and verticals, showing how technology and AI are transforming industries, centered on key moments and IBM partners like L'Oreal, FIFA, and Adobe.</div>
+      <div class="forward-body">IBM SkillsBuild runs programs across all Goodwall themes and verticals, showing how technology and AI are transforming industries, centered on key moments and IBM partners like L'Oreal, FIFA, and Adobe.</div>
     </div>
   </div>
 </section>
@@ -915,8 +1047,8 @@
   new Chart(document.getElementById('countryChart'), {
     type: 'bar',
     data: {
-      labels: ['Nigeria','India','Kenya','Pakistan','Nepal','USA','South Africa','Singapore','Ghana'],
-      datasets: [{ data: [7269, 6715, 2578, 1407, 1304, 1239, 1118, 1022, 984], backgroundColor: [accent, accent, blue, blue, blue, blue, green, green, green], borderRadius: 6, borderSkipped: false }]
+      labels: ['Nigeria','India','Kenya','Pakistan','Nepal','USA','South Africa','Indonesia','Ghana','Philippines'],
+      datasets: [{ data: [8123, 7093, 2874, 1499, 1481, 1400, 1208, 1169, 1038, 525], backgroundColor: [accent, accent, blue, blue, blue, blue, green, green, green, green], borderRadius: 6, borderSkipped: false }]
     },
     options: {
       responsive: true, maintainAspectRatio: false,
@@ -925,7 +1057,6 @@
     }
   });
 
-  // Active nav
   const navLinks = document.querySelectorAll('.nav-links a');
   const sections = document.querySelectorAll('[id]');
   window.addEventListener('scroll', () => {
